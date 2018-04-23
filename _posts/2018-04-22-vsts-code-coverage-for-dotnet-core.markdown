@@ -13,7 +13,7 @@ First of all there are a few changes that need to be done before:
 *   Add `Microsoft.CodeCoverage` package reference to your test projects (this step is not required if the package is bundled into the dotnet SDK);
 *   Add `<DebugType>Full</DebugType>` to each of project in the solution.
 
-The option `<DebugType>Full</DebugType>` is required to emit a classic windows PDB symbols instead of symbols in portalble format (`<DebugType>Portable</DebugType>`). This is a temporary workaround for the [issue](https://github.com/Microsoft/vstest/issues/800).
+The option `<DebugType>Full</DebugType>` is required to emit a classic windows PDB symbols instead of symbols in portalble format (`<DebugType>Portable</DebugType>`). This is a temporary workaround for .NET Core. See [issue](https://github.com/Microsoft/vstest/issues/800).
 
 After steps above, you can run code coverage in two ways:
 
