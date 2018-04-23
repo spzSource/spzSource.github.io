@@ -16,7 +16,7 @@
 title: Easy Dev v0.1
 email: sasha.popitich@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Software development notes.
+  Software development notes: .NET, Azure Cloud Platform, Architecture, Testing and so on. 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: alex_popitich
