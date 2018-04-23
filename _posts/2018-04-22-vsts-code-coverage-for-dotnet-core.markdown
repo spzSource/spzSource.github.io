@@ -6,7 +6,7 @@ categories: VSTS
 tags: VSTS, dotnet, code coverage
 ---
 
-Let's imagine that you have VSTS build pipeline for continuously build and test you project. Moreover your project can also has many (or not) tests.To understand what places in your code are covered and what not, you might want to gather coverage code coverage statistic for your tests. Let's take a look how we can do this using out-of-box solution in VSTS.
+Let's imagine that you have VSTS build pipeline for continuously builds and tests you project. Moreover your project can also has many (or not) tests.To understand what places in your code are covered and what not, you might want to gather coverage code coverage statistic for your tests. Let's take a look how we can do this using out-of-box solution in VSTS.
 
 First of all there are a few changes that need to be done before:
 
