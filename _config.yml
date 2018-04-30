@@ -13,20 +13,27 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Easy Dev v0.1
+title: Popitich's blog v0.1
 email: sasha.popitich@gmail.com
+show_excerpts: true
 description: >- # this means to ignore newlines until "baseurl:"
   Software development notes: .NET, Azure Cloud Platform, Architecture, Testing and so on. 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://spzsource.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: alex_popitich
 github_username:  spzSource
+instagram_username: sasha_popitich
+linkedin_username: popiticha
 
 # Build settings
 markdown: kramdown
 theme: minima
+
 plugins:
   - jekyll-feed
+
+disqus:
+  shortname: https-spzsource-github-io
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
