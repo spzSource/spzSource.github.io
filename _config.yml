@@ -29,6 +29,8 @@ header_pages:
   - dotnet-weekly.md
   - about.md
 
+google_analytics: UA-118456916-1
+
 disqus:
   shortname: https-spzsource-github-io
 
