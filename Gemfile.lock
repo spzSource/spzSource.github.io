@@ -178,8 +178,6 @@ GEM
     mini_portile2 (2.3.0)
     minima (2.1.1)
       jekyll (~> 3.3)
-    minimaless (0.0.13)
-      jekyll (~> 3.3)
     minitest (5.11.3)
     multipart-post (2.0.0)
     net-dns (0.8.0)
@@ -219,8 +217,8 @@ DEPENDENCIES
   github-pages (~> 162)
   jekyll (~> 3.5.2)
   jekyll-feed (= 0.9.2)
+  jekyll-sitemap
   minima (~> 2.1.1)
-  minimaless
   tzinfo-data
 
 BUNDLED WITH
