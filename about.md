@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About this strange blog
+title: About
 permalink: /about/
 ---
 
