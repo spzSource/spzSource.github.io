@@ -82,7 +82,7 @@ The section `excludePaths` means that we excludes all properties from indexing a
 More general is overlapped by more specific. 
 
 This example also shows how we can exclude properties from indexing, 
-because by default all properties are considered for building reverse index structure. 
+as by default all properties are considered for building reverse index structure. 
 If you want to improve write operations, this approach is a first what you need to apply. 
 
 For detailed information you can go through the next pages:
