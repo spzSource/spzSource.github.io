@@ -78,7 +78,7 @@ Index configuration must be the following:
 
 ```
 
-The section `excludePaths` means that we excludes all properties from indexing and then include `InvoiceDate` for indexing. 
+The section `excludePaths` means that we exclude all properties from indexing and then include `InvoiceDate` for indexing. 
 More general is overlapped by more specific. 
 
 This example also shows how we can exclude properties from indexing, 
