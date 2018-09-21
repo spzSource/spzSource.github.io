@@ -6,8 +6,6 @@ categories: architecture
 tags: dotnet architecture patterns IoC module modular applications
 ---
 
-## Bad way of doing software
-
 Lets take a look on the following project structure, where same kind of classes are placed in the same place under the same project:
 
 ```
@@ -27,8 +25,7 @@ Application.sln
         | - Service2.cs
 ```
 
-Does it pretty familiar for you? ;) I would say this is worst approach that I can imagine. Why it is bad? Well, there are many reasons:
-
+Does it pretty familiar for you? ;) I would say this is worst approach that I can imagine. Why it is bad? Well, there are many reasons...
 
 ### Reason #1 Hard to control changes across distributes teams
 
