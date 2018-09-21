@@ -6,6 +6,8 @@ categories: architecture
 tags: dotnet architecture patterns IoC module modular applications
 ---
 
+Have you ever seen projects where all entities, models, domain objects, repositories, services are placed in one place based on class types: all entities are on a single project, repositories are all in a another project and so on? Does it pretty familiar for you? ;) I would say this is worst approach that I can imagine. Why it is bad? Well, there are many reasons...
+
 Lets take a look on the following project structure, where same kind of classes are placed in the same place under the same project:
 
 ```
@@ -25,7 +27,7 @@ Application.sln
         | - Service2.cs
 ```
 
-Does it pretty familiar for you? ;) I would say this is worst approach that I can imagine. Why it is bad? Well, there are many reasons...
+## Why is that bad?
 
 ### Reason #1 Hard to control changes across distributes teams
 
