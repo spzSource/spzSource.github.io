@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Build modular applications"
+title:  "Building modular applications"
 date:   2018-09-15 04:57:00 +0300
 categories: architecture
 tags: dotnet architecture patterns IoC module modular applications
@@ -24,7 +24,7 @@ Application.sln
     |-- Services.csproj
         |
         | - Service1.cs
-        | - Service2.cs
+        | - Service2.cså
 ```
 
 ## Why is that bad?
