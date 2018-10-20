@@ -6,8 +6,6 @@ categories: design
 tags: code quality, composition, decorator, functional composition, golang, go, design patterns, cross cutting concerns, clean code, unit testing
 ---
 
-## Basics
-
 Lets talk a bit about SOLID or rather SRP (Single responsibility principle). How do you think does this piece of code follow SRP principle?
 
 ```go
