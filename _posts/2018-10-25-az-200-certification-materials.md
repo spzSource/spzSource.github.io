@@ -6,8 +6,6 @@ categories: certification
 tags: azure, certification, exams, development, az-200
 ---
 
-## New certification
-
 Microsoft recently has [announced](https://www.microsoft.com/en-us/learning/community-blog-post.aspx?BlogId=8&Id=375159) their role-based certification program. Six new job roles were announced: developer, architect, administrator, DevOps, Modern Desktop administrator, and enterprise administrator. But my interest will be aimed against azure developer role.
 
 There are two exams:
