@@ -126,7 +126,7 @@ For better code redability the following extension methods can be created:
         {
             if (!source.StatusAttributes.TryGetValue("x-ms-retry-after-ms", out var time))
             {
-                throw new InvalidOperationException("Header 'x-ms-status-code' is not presented.");
+                throw new InvalidOperationException("Header 'x-ms-retry-after-ms' is not presented.");
             }
 
             return TimeSpan.Parse(time.ToString());
