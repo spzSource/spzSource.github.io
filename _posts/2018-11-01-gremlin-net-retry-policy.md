@@ -16,7 +16,7 @@ A bad news are that up to `v3.4.0-rc2` client does not provide any intormation a
 
 Here is what `ResponseExceptions` contains starting at `v3.4.0-rc2` version:
 
-![Learning Path]({{ "/assets/gremlin-retry/ResponseExceptionContent.png" | absolute_url }})
+![Learning Path]({{ "/assets/gremlin-retry/ResponseExceptionContent.PNG" | absolute_url }})
 
 Let's write some code for both cases (exponential retry and `retry-after` header)
 
