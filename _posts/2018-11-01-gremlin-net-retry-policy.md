@@ -8,9 +8,9 @@ tags: gremlin.net, retry, policies, graph, cosmosdb, azure
 
 At the time of writing this article, [Gremlin.NET](https://github.com/apache/tinkerpop/tree/master/gremlin-dotnet) client library does not support retrying after transient faults. This is a big issue when client communicate with graph services which have to provide  some kind of SLA agrrements.
 
-For instance, Azure Cosmos DB to fit SLA can break some requests with 429 status code, which means that you need to wait before you can do another attempt. This is an example of [throttling](https://docs.microsoft.com/en-us/azure/architecture/patterns/throttling).
+For instance, Azure Cosmos DB to fit SLA can break some requests with 429 status code, which means that you need to wait before you can do another attempt. This is an example of [throttling] (https://docs.microsoft.com/en-us/azure/architecture/patterns/throttling).
 
-As there is no retrying mechanism in the Gremlin.NET client, we have to implement it by our own. When cosmos graph database starts to consume more RU (request units) than configured, the service starts sending responces with 429 status code and `retry-after` header, which tells us how much time we have to wait before send another request.
+As there is no retrying mechanism in the Gremlin.NET client, we have to implement it by our own. When cosmos graph database starts to consume more RU (request units) than configured, the service starts sending responces with 429 status code ('Request rate is large' error) and `retry-after` header, which tells us how much time we have to wait before send another request.
 
 A bad news are that up to `v3.4.0-rc2` client does not provide any intormation about headers. That means we cannot use `retry-after` header. So in that case we can implement only exponential retry, which may be much slower.
 
