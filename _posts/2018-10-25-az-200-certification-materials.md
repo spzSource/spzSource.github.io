@@ -29,6 +29,8 @@ Learning path for achieving certificate:
         * [Cloud Design Patterns](https://azureinteractives.azurewebsites.net/CloudDesignPatterns/default.html)
         * [Azure Architecture Patterns](https://docs.microsoft.com/en-us/azure/architecture/)
         * Azure Learn: [Tour Azure services and features](https://docs.microsoft.com/en-gb/learn/modules/tour-azure-services-and-features/)
+
+
 ---
 
 * Select an appropriate integration solution (_May include but not limited to: Address computational bottlenecks, state management, and OS requirements; provide for web hosting if applicable; evaluate minimum number of nodes_)
