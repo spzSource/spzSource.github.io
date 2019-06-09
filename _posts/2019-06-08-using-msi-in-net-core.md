@@ -8,7 +8,7 @@ tags: netcore, netcoreapp, dotnet, .net, msi, azure, managed, service, identitie
 
 Managed identities for Azure resources provides automatic managment for identities in Azure AD in order to authenticate to any resources without having any credentials in the code. I guess a reader is already familiar with managed identities. Just in case here is a [link](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) to appropariate page to start with.
 
-For local authentication the following approaches could be used:
+As stated [here](https://docs.microsoft.com/en-us/azure/key-vault/service-to-service-authentication), for local authentication the following approaches could be used:
 
 - authenticate using Visual Studio account;
 - authenticate using Azure CLI;
