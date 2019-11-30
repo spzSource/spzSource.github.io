@@ -27,7 +27,7 @@ On dev environment everything was working correctly, but on environment with lar
 > This query does retrieve the count of distinct properties for the matched set of documents. However, the query is incorrectly recognized as being distributed and hence we execute it against each partition individually and return the sum of counts from all partition.
 > Of cource, the proper distribution of such a query is to retrieve the set of distinct value from all partitions and the apply distinct across all result sets before evaluating the count. We currently do not support distributing such queries, but we should have errord on it rather than returning incorrect results. We will be working on fixing this soon.
 
-The answer sounds reasonable except the one fact we've noticed: when we increase RU/s for a collection the query starts to return a correct result... It doesn't match with explanation providede by Microsoft engineers, as from my knowledge a number of phisical partitions does't depend on throughput changing.
+The answer sounds reasonable except the one fact we've noticed: when we increase RU/s for a collection the query starts to return a correct result... It doesn't match with explanation provided by Microsoft engineers, as from my knowledge a number of phisical partitions does't depend on throughput changing.
 
 ## TL;TD
 
