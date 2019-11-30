@@ -27,15 +27,15 @@ On dev environment everything was working correctly, but on environment with lar
 > This query does retrieve the count of distinct properties for the matched set of documents. However, the query is incorrectly recognized as being distributed and hence we execute it against each partition individually and return the sum of counts from all partition.
 > Of cource, the proper distribution of such a query is to retrieve the set of distinct value from all partitions and the apply distinct across all result sets before evaluating the count. We currently do not support distributing such queries, but we should have errord on it rather than returning incorrect results. We will be working on fixing this soon.
 
-The answer sounds reasonable except the one fact we've noticed: when we increase RU/s for a collection the query starts to return a correct result... It doesn't match with explanation provided by Microsoft engineers, as from my knowledge a number of phisical partitions does't depend on throughput changing.
+The answer sounds reasonable except the one fact we've noticed: when we increase RU/s for a collection the query starts to return a correct result... It doesn't match with explanation provided by Microsoft engineers, as from my knowledge a number of physical partitions doesn't depend on throughput changes.
 
 ## TL;TD
 
 The query mentioned above does not work. Cosmos Db engineers have three work items for a near future to improve this situation:
 
-- Be able to identify such queries and return an execution error rather incorrectly execute the query - rough ETA is first quater of 2020;
-- Add support for DCOUNT w/ proper query distribution - rough ETA is first quater of 2020;
-- Support proper distribution of the query - the might be able to provide limited support for simple queries, but a complete support would be very difficult to achieve as part of SDK code as it would have dependency on the query engine itself. This has to be delivered as a hosted service, which we are currently are working on. The rough ETA for the availability of this service is the second half of 2020;
+- Be able to identify such queries and return an execution error rather incorrectly execute the query - rough ETA is first quater of 2020.
+- Add support for DCOUNT w/ proper query distribution - rough ETA is first quater of 2020.
+- Support proper distribution of the query - the might be able to provide limited support for simple queries, but a complete support would be very difficult to achieve as part of SDK code as it would have dependency on the query engine itself. This has to be delivered as a hosted service, which they currently are working on. The rough ETA for the availability of this service is the second half of 2020.
 
 ## Conclusion
 
