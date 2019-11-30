@@ -35,7 +35,7 @@ The query mentioned above does not work. Cosmos Db engineers have three work ite
 
 - Be able to identify such queries and return an execution error rather incorrectly execute the query - rough ETA is first quater of 2020.
 - Add support for DCOUNT w/ proper query distribution - rough ETA is first quater of 2020.
-- Support proper distribution of the query - the might be able to provide limited support for simple queries, but a complete support would be very difficult to achieve as part of SDK code as it would have dependency on the query engine itself. This has to be delivered as a hosted service, which they currently are working on. The rough ETA for the availability of this service is the second half of 2020.
+- Support proper distribution of the query - theу might be able to provide limited support for simple queries, but a complete support would be very difficult to achieve as part of SDK code as it would have dependency on the query engine itself. This has to be delivered as a hosted service, which they currently are working on. The rough ETA for the availability of this service is the second half of 2020.
 
 ## Conclusion
 
