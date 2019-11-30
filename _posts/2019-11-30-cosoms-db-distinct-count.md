@@ -41,4 +41,4 @@ The query mentioned above does not work. Cosmos Db engineers have three work ite
 
 It's very funny that such simple thing like distinct count doesn't work on such advertised database. Sometimes it seems to me that all the customers are beta testers :) Moreover it takes a long time to get a clear answer from Microsoft support. Here is a funny example: [link](https://feedback.azure.com/forums/263030-azure-cosmos-db/suggestions/38610298-bug-incorrect-results-returned-from-count-distinc)
 
-Summing up, I would say that you have to think twice before you decide to use cosmos db in you current or next projects.
+Summing up, I would say that you have to think twice before you decide to use cosmos db in your current or next projects.
