@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure Durable Functions: performance tips"
-date: 2020-01-09 23:30:00 +0300
+date: 2020-03-07 18:50:00 +0300
 categories: azure
 tags: functions, azure, durable framework, performance, throughput
 ---
