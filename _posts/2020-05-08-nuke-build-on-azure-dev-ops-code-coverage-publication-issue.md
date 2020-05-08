@@ -10,7 +10,7 @@ On my current project we've started use [Nuke.Build](https://nuke.build/) for bu
 
 ## What happened
 
-The issue is related to how Azure DevOps (pipelines) perform artifact publishing. We have a regular build pipeline, containing steps for building, testing, calculating code coverage and publishing all this stuff as an artifact for deployment purposes.
+The issue is related to how Azure DevOps (pipelines) performs artifact publishing. We have a regular build pipeline, containing steps for building, testing, calculating code coverage and publishing all this stuff as an artifact for deployment purposes.
 
 Artifacts publishing target (step) looks like stated below:
 
@@ -31,12 +31,12 @@ Target PublishArtifacts => _ => _
     });
 ```
 
-Everything is loking legal, right?! But code above periodically causes builв failures with following odd error:
+Everything is loking legal, right?! But code above periodically causes build failures with following odd error:
 
 ```
 The process cannot access the file '{filename.xml}' because it is being used by another process.
 ```
-For a long time we could not understand what part of the build pipeline might cause such issue, until it occured to me that we need to turn on debug outpur for build agent :). After that I managed to find a stacktrace:
+For a long time we could not understand what part of the build pipeline might cause such issue, until it occured to me that we need to turn on debug output for build agent :). After that I managed to find a stacktrace:
 
 ```
 ##[debug]System.IO.IOException: The process cannot access the file 'filename.xml' because it is being used by another process.
@@ -69,6 +69,6 @@ Target PublishArtifacts => _ => _
 
 ## Lessons learned
 - use detail debug output to gather more information from logs;
-- get familiar with libraries, frameworks and tools you are using, even look at the code if it's possible.
+- get familiar with libraries, frameworks, and tools you are using, even look at the code if it's possible.
 
 Happy codding!
