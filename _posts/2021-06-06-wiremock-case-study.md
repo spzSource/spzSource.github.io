@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WireMock case study: how to reduce delivery lead time"
-date: 2021-06-06 22:38:00 +0300
+date: 2021-06-06 22:39:00 +0300
 categories: acceptance testing
 tags: acceptance testing, test automation, wiremock
 ---
