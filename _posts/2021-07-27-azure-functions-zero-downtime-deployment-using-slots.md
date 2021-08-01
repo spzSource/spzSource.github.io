@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Zero-downtime deployment for Azure functions - how-to guide."
+title: "Zero-downtime deployment for Azure functions - 'how to' guide."
 date: 2021-07-27 19:50:00 +0300
 categories: devops
 tags: devops, deployment, continuous, CD, azure, functions, slots, guide
