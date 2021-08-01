@@ -1,16 +1,16 @@
 ---
 layout: post
-title: "Nuances of zero-downtime deployment for Azure functions using slots."
+title: "Zero-downtime deployment for Azure functions - how-to guide."
 date: 2021-07-27 19:50:00 +0300
 categories: devops
 tags: devops, deployment, continuous, CD, azure, functions, slots, guide
 ---
 
-This article can be considered as a complete guide for configuring zero-downtime deployment for Azure Function using deployment slots. I found it useful to combine all information and "pain points" in a single place, because the standard documentation does not explain all nuances (there are a lot of nuances by the way :D).
+I found it useful to highlight the approach of zero-downtime deployment in context of Azure Functions as well as a few "pain points", because the standard documentation does not explain all nuances (there are a lot of nuances by the way :smile:).
 
 ## Context
 
-To achieve zero-downtime deployment we need to be able to have two versions of the same application (for instance v1 and v2) running in parallel. All remaining in-flight requests to v1 must be handled correctly and traffic between v1 and v2 must be redirected seamlessly. This is what deployment slots provide for us "out of the box".
+To achieve zero-downtime deployment we need to be able to run two versions of the same application (for instance v1 and v2) in parallel. All remaining in-flight requests to v1 must be handled correctly and traffic between v1 and v2 must be redirected seamlessly. This is what deployment slots provide for us "out of the box".
 
 Just to mention, deployment slots also provide the ability for partial traffic redirection, so are suitable for A/B testing or canary releases as well, but it's out of the scope of this article.
 
@@ -18,7 +18,7 @@ Just to mention, deployment slots also provide the ability for partial traffic r
 
 ## How to create deployment slot
 
-Here is how it can be created using Azure Management Library (Microsoft.Azure.Management):
+Here is how it can be created using Azure Management Library (`Microsoft.Azure.Management`):
 
 ```cs
 var function = await Azure.AppServices.FuntionApp
@@ -55,7 +55,7 @@ There are few things to mention:
 
 Specific settings:
 - `FUNCTION_EXTENSION_VERSION` must be set in case `WithBrandNewConfiguration` when defining the slot, because in that case slot doesn't inherit function runtime version.
-- `WEBSITE_SWAP_WARMUP_PING_PATH` and `WEBSITE_SWAP_WARMUP_PING_STATUSES` are used for configuring introspection/health-check endpoint, which is used for warnup phase. In my particular case we have a custome health-check endpoint `/api/healtcheck` indicating healthiness of the service.
+- `WEBSITE_SWAP_WARMUP_PING_PATH` and `WEBSITE_SWAP_WARMUP_PING_STATUSES` are used for configuring introspection/health-check endpoint, which is used for warnup phase. In my particular case there is a custom health-check endpoint `/api/healtcheck` indicating healthiness of the service.
 - `WEBSITE_ADD_SITENAME_BINDING_IN_APPHOST_CONFIG` - prevents unexpected host restart. Here is explanation ([link](https://ruslany.net/2019/06/azure-app-service-deployment-slots-tips-and-tricks/)):
 
     > By default Function Runtime put the site’s hostnames into the site’s applicationHost.config file “bindings” section. Then when the swap happens the hostnames in the applicationHost.config get out of sync with what the actual site’s hostnames are. That does not affect the app in anyway while it is running, but as soon as some storage event occurs, e.g. storage volume fail over, that discrepancy causes the worker process app domain to recycle. If you use this app setting then instead of the hostnames we will put the sitename into the “bindings” section of the appHost.config file. The sitename does not change during the swap so there will be no such discrepancy after the swap and hence there should not be a restart.
@@ -63,14 +63,14 @@ Specific settings:
    
 ## How to swap deployment slots
 
-There are two way of ding that: automatic (auto-swap) and manual. For automatin swap it's required to call `WithAutoSwapSlotName("production")` when creating the slot. I found automatic swap less transparent, so the example below shows manual approach. 
+There are two way of doing that: automatic (auto-swap) and manual. For automatin swap it's required to set `WithAutoSwapSlotName("production")` when creating the slot. I found automatic swap less transparent, so the example below shows manual approach. 
 
 ```cs
-await slot.DeployZip(...);
+await slot.DeployZip(...); // custom extension method
 await slot.SwapAsync("production");
 ```
 
-A good news that `SwapAsync` waits until slots fully swapped!
+A good news that `SwapAsync` waits until slots fully swapped! So we are safe to run any kind of automatic acceptance tests right after `SwapAsync` completed.
     
 ## Testing
 
@@ -78,8 +78,8 @@ There are two version of the same service (`0.9.6` and `0.9.7`). Version `0.9.6`
 
 Just for test purposes I've created the following script:
 
-```ps1
-while(1) {
+```powershell
+while (1) {
     $response = Invoke-Webrequest -Uri "https://serviceA.company.com/api/healthcheck" -SkipHttpErrorCheck -Headers @{ "Cache-Control" = "no-cache" }
 
     if ($request.statuscode -eq "200") {
