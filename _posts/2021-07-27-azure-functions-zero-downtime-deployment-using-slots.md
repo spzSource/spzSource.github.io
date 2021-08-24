@@ -95,13 +95,13 @@ The script simply calls healt-check endpoint every second and logs result to con
 
 Lets run the script against the staging and production slots. Here is an output:
 
-![Before deployment]({{ "/assets/deployment-slots/2021-07-27_21h13_29.png" | absolute_url }})
+![Before deployment]({{ "/assets/deployment-slots/2021-07-27_21h25_21.png" | absolute_url }})
 
 First part of the screenshot (1) contains information about production slot, the second part (2) - is for staging slot. As you may see, `production` slot have `0.9.6`, `staging` slot contains `0.9.5` (previously swapped).
 
 Now let's deploy a new version `0.9.7` to `staging` slot and call swap. Here is what happened:
 
-![After deployment]({{ "/assets/deployment-slots/2021-07-27_21h25_21.png" | absolute_url }})
+![After deployment]({{ "/assets/deployment-slots/2021-07-27_21h13_29.png" | absolute_url }})
 
 As you may see `production` slot (1) was successfully swithed to `0.9.7` without downtime after warmup on staging slot. In turn, `staging` slot now contains `0.9.6` version.
 
