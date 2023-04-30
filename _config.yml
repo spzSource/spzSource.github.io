@@ -20,9 +20,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Software development notes: .NET, Azure Cloud Platform, Architecture, Testing and so on. 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://spzsource.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: alex_popitich
 github_username:  spzSource
-instagram_username: sasha_popitich
 linkedin_username: popiticha
 
 header_pages:
