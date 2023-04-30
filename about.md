@@ -4,14 +4,4 @@ title: About
 permalink: /about/
 ---
 
-This blog is a place containing notes about development and design problems and approaches I meet as part of my work. I hope these notes will help not only for me, but for somebody else who interested in software development and design.
-
-The main categories that are covered:
-
-- .NET (.NET Core, ASP.NET Core, EF Core.)
-- Azure Cloud Platform;
-- Software Design;
-- Testing.
-
-
-To not lose something you can subscribe on my twitter: [@{{site.twitter_username}}](https://www.twitter.com/{{site.twitter_username}})
+Welcome to my blog, where I share my notes on various development and design problems and approaches that I encounter as part of my work. My hope is that these notes will be useful not only for myself but for others who are interested in software development and design. Whether you're a fellow developer, designer, or simply someone curious about the field, I hope you find my blog to be a helpful resource.
