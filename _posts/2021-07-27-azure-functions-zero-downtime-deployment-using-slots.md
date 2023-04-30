@@ -6,7 +6,7 @@ categories: devops
 tags: devops, deployment, continuous, CD, azure, functions, slots, guide
 ---
 
-I found it useful to highlight the approach of zero-downtime deployment in context of Azure Functions as well as a few "pain points", because the standard documentation does not explain all nuances (there are a lot of nuances by the way :smile:).
+I found it useful to highlight the approach of zero-downtime deployment in context of Azure Functions as well as a few "pain points", because the standard documentation does not explain all nuances (there are a lot of nuances by the way).
 
 ## Context
 
