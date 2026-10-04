@@ -14,7 +14,8 @@ To achieve zero-downtime deployment we need to be able to run two versions of th
 
 Just to mention, deployment slots also provide the ability for partial traffic redirection, so are suitable for A/B testing or canary releases as well, but it's out of the scope of this article.
 
-:warning: Please keep in mind that for Consumtion plan it's possible to create only one slot per app, so in that case it's not possible to fully apply A/B testing practices.
+> **Warning** — for Consumtion plan it's possible to create only one slot per app, so in that case it's not possible to fully apply A/B testing practices.
+{: .warning }
 
 ## How to create deployment slot
 

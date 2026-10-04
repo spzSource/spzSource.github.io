@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 itemprop="headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+      {% if page.categories %} · {% for cat in page.categories %}{{ cat }}{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}
+    </p>
+  </header>
+
+  <div class="prose" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer">
+    <a href="{{ '/' | relative_url }}">← all posts</a>
+  </footer>
+</article>
+
+{% if site.disqus.shortname %}
+<section class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "{{ page.url | absolute_url }}";
+      this.page.identifier = "{{ page.url | absolute_url }}";
+    };
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://{{ site.disqus.shortname }}.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the comments.</noscript>
+</section>
+{% endif %}

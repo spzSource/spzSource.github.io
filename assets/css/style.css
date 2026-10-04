@@ -1,0 +1,342 @@
+/* ============================================================
+   Variant 2 — earendil-inspired minimal mono.
+   One pixel-flavoured monospace (Departure Mono, MIT), small
+   type, hairline rules, generous whitespace, no panels.
+   Light = pastel white; dark = dark blue. Follows OS setting.
+   ============================================================ */
+
+@font-face {
+  font-family: 'Departure Mono';
+  src: url('../fonts/DepartureMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --mono: 'Departure Mono', 'SFMono-Regular', ui-monospace, Menlo, monospace;
+  --serif: 'Source Serif 4', 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+
+  /* pastel white */
+  --bg:        #f6f4ee;
+  --ink:       #2e2c28;
+  --ink-soft:  rgba(46, 44, 40, 0.58);
+  --ink-faint: rgba(46, 44, 40, 0.35);
+  --rule:      rgba(46, 44, 40, 0.16);
+  --code-bg:   rgba(46, 44, 40, 0.06);
+  --pre-bg:    #17202f;
+  --pre-ink:   rgba(238, 240, 245, 0.92);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* dark blue */
+    --bg:        #0e1626;
+    --ink:       rgba(232, 236, 244, 0.88);
+    --ink-soft:  rgba(232, 236, 244, 0.55);
+    --ink-faint: rgba(232, 236, 244, 0.32);
+    --rule:      rgba(232, 236, 244, 0.14);
+    --code-bg:   rgba(232, 236, 244, 0.08);
+    --pre-bg:    #17202f;
+    --pre-ink:   rgba(232, 236, 244, 0.9);
+  }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { font-size: 100%; }
+
+body {
+  font-family: var(--serif);
+  font-size: 1.1875rem;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--bg);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+::selection { background: var(--ink); color: var(--bg); }
+
+.wrap { max-width: 44rem; margin: 0 auto; padding: 0 1.5rem; }
+
+a { color: var(--ink); text-underline-offset: 0.18em; }
+a:hover { color: var(--ink-soft); }
+
+/* ---------- header ---------- */
+
+h1, h2, h3, h4, h5, h6 { font-family: var(--mono); }
+
+.top-nav, .post-meta, .post-list time, .index-heading, .site-footer {
+  font-family: var(--mono);
+}
+
+.site-header { padding: 2.5rem 0 0; }
+
+.top-nav {
+  display: flex; justify-content: space-between; align-items: baseline;
+  flex-wrap: wrap; gap: 0.5rem 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.8125rem;
+}
+
+.brand { text-decoration: none; }
+
+.nav-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  margin-left: 1.25rem;
+}
+.nav-links a:hover { color: var(--ink); text-decoration: underline; }
+
+/* ---------- home ---------- */
+
+.intro { padding: 4rem 0 3rem; }
+
+.intro h1 {
+  font-size: 1.375rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.intro .lede {
+  margin-top: 1rem;
+  color: var(--ink-soft);
+  max-width: 34em;
+}
+
+.index-heading {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--ink-faint);
+  letter-spacing: 0.08em;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.post-list { list-style: none; margin-top: 2.5rem; }
+
+.post-list li {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.post-list time {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--ink-faint);
+}
+
+.post-list li > a {
+  display: inline-block;
+  margin-top: 0.25rem;
+  font-family: var(--mono);
+  text-decoration: none;
+  font-size: 1.0625rem;
+}
+.post-list li > a:hover { text-decoration: underline; }
+
+.post-list .excerpt {
+  margin-top: 0.4rem;
+  font-size: 1.0rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- post ---------- */
+
+.post-header { padding: 4rem 0 2rem; }
+
+.post-header h1 {
+  font-size: 1.625rem;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.post-meta {
+  margin-top: 0.9rem;
+  font-size: 0.8125rem;
+  color: var(--ink-faint);
+}
+
+.prose { font-size: 1.0rem; }
+
+.prose p { margin: 1.25em 0; }
+
+.prose h2, .prose h3, .prose h4 {
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 2.2em 0 0.8em;
+}
+.prose h2 { font-size: 1.25rem; }
+.prose h3 { font-size: 1.0625rem; }
+.prose h4 { font-size: 1rem; }
+
+.prose ul, .prose ol { margin: 1.25em 0; padding-left: 1.5em; }
+.prose li + li { margin-top: 0.35em; }
+.prose li::marker { color: var(--ink-faint); }
+
+.prose a { text-decoration: underline; }
+
+.prose strong { font-weight: 400; background: var(--code-bg); padding: 0 0.2em; }
+
+code, pre, kbd { font-family: var(--mono); }
+
+.prose code {
+  font-size: 0.82em;
+  background: var(--code-bg);
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
+}
+
+.prose pre {
+  margin: 1.5em 0;
+  background: var(--pre-bg);
+  color: var(--pre-ink);
+  padding: 1.1rem 1.25rem;
+  overflow-x: auto;
+  border-radius: 3px;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.prose pre code { background: none; padding: 0; }
+
+.prose blockquote {
+  margin: 1.5em 0;
+  padding-left: 1.25em;
+  border-left: 2px solid var(--rule);
+  color: var(--ink-soft);
+}
+
+/* GitHub-style admonitions.
+   Usage in a post (kramdown IAL on a blockquote):
+     > **Warning** — something risky.
+     {: .warning }
+   Classes: .note (blue), .warning (yellow). */
+.prose blockquote.note, .prose blockquote.warning {
+  padding: 0.9rem 1.1rem;
+  border-left-width: 4px;
+  color: var(--ink);
+}
+.prose blockquote.note p, .prose blockquote.warning p { margin: 0.4em 0; }
+
+.prose blockquote.note {
+  border-left-color: #4c8dff;
+  background: rgba(76, 141, 255, 0.10);
+}
+.prose blockquote.warning {
+  border-left-color: #d4a017;
+  background: rgba(212, 160, 23, 0.12);
+}
+.prose blockquote.note strong { background: none; padding: 0; color: #4c8dff; }
+.prose blockquote.warning strong { background: none; padding: 0; color: #d4a017; }
+@media (prefers-color-scheme: dark) {
+  .prose blockquote.note { background: rgba(76, 141, 255, 0.14); }
+  .prose blockquote.warning { background: rgba(212, 160, 23, 0.15); }
+  .prose blockquote.note strong { color: #82aaff; }
+  .prose blockquote.warning strong { color: #e0b53e; }
+}
+
+.prose img {
+  display: block;
+  max-width: 100%;
+  margin: 1.75em auto;
+  border: 1px solid var(--rule);
+}
+
+@media (prefers-color-scheme: dark) {
+  /* White-background diagrams get inverted so they don't glare on the
+     dark blue page. Add class="no-invert" to an <img> to opt out. */
+  .prose img:not(.no-invert) {
+    filter: invert(0.93) hue-rotate(180deg) brightness(0.95);
+    border-color: transparent;
+  }
+}
+
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2.5em 0;
+}
+
+.prose table { border-collapse: collapse; width: 100%; margin: 1.5em 0; font-size: 0.9rem; }
+.prose th, .prose td { border: 1px solid var(--rule); padding: 0.4rem 0.7rem; text-align: left; }
+
+.post-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.875rem;
+}
+.post-footer a { color: var(--ink-soft); text-decoration: none; }
+.post-footer a:hover { color: var(--ink); text-decoration: underline; }
+
+.comments { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+  margin-top: 6rem;
+  padding-top: 1.5rem; padding-bottom: 2.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.8125rem;
+  color: var(--ink-faint);
+}
+.site-footer a { color: var(--ink-soft); }
+
+@media (max-width: 40rem) {
+  body { font-size: 0.875rem; }
+  .intro, .post-header { padding-top: 3rem; }
+}
+
+/* ============================================================
+   Rouge syntax theme — "night harbor".
+   Colors sampled to sit naturally on the site's dark blue:
+   soft periwinkle keywords, pale cyan strings, amber types.
+   Same block is used in both modes (like earendil's dark pre).
+   ============================================================ */
+
+:root { --pre-bg: #17202f; }
+
+.highlight .hll { background-color: #22304a; }
+.highlight .c, .highlight .cm, .highlight .c1, .highlight .cs, .highlight .cp { color: #667199; font-style: italic; }
+.highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv { color: #82aaff; }
+.highlight .kt { color: #ffcb6b; }
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s1, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sr, .highlight .ss, .highlight .sx, .highlight .dl { color: #9ecea2; }
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo, .highlight .mx { color: #f78c6c; }
+.highlight .n, .highlight .na, .highlight .nb, .highlight .ni, .highlight .nl, .highlight .nn, .highlight .no, .highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi, .highlight .vm, .highlight .nx, .highlight .py, .highlight .bp { color: #d6deeb; }
+.highlight .nc, .highlight .ne, .highlight .nd { color: #ffcb6b; }
+.highlight .nf, .highlight .fm { color: #82aaff; }
+.highlight .nt { color: #f07178; }
+.highlight .o, .highlight .ow, .highlight .p { color: #89ddff; }
+.highlight .gh, .highlight .gu { color: #82aaff; font-weight: bold; }
+.highlight .gd { color: #f07178; }
+.highlight .gi { color: #9ecea2; }
+.highlight .ge { font-style: italic; }
+.highlight .gs { font-weight: bold; }
+.highlight .err { color: #f07178; }
+.highlight .w { color: #d6deeb; }
+
+/* Light-mode code blocks: same palette family, inverted value.
+   Background is a slightly deeper pastel than the page so the
+   block reads as a panel, not a hole. */
+@media (prefers-color-scheme: light) {
+  :root { --pre-bg: #eae7de; --pre-ink: #2e2c28; }
+
+  .highlight .hll { background-color: #ddd9cc; }
+  .highlight .c, .highlight .cm, .highlight .c1, .highlight .cs, .highlight .cp { color: #8a8574; font-style: italic; }
+  .highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv { color: #0451a5; }
+  .highlight .kt { color: #9a5b00; }
+  .highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s1, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sr, .highlight .ss, .highlight .sx, .highlight .dl { color: #267035; }
+  .highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo, .highlight .mx { color: #b4530a; }
+  .highlight .n, .highlight .na, .highlight .nb, .highlight .ni, .highlight .nl, .highlight .nn, .highlight .no, .highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi, .highlight .vm, .highlight .nx, .highlight .py, .highlight .bp { color: #2e2c28; }
+  .highlight .nc, .highlight .ne, .highlight .nd { color: #9a5b00; }
+  .highlight .nf, .highlight .fm { color: #0451a5; }
+  .highlight .nt { color: #a31515; }
+  .highlight .o, .highlight .ow, .highlight .p { color: #586069; }
+  .highlight .gh, .highlight .gu { color: #0451a5; font-weight: bold; }
+  .highlight .gd { color: #a31515; }
+  .highlight .gi { color: #267035; }
+  .highlight .err { color: #a31515; }
+  .highlight .w { color: #2e2c28; }
+}
