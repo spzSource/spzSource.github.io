@@ -2,12 +2,12 @@
 layout: default
 ---
 
-<header class="intro">
+<header class="intro visually-hidden">
   <h1>{{ site.title }}</h1>
   <p class="lede">{{ site.description | strip_newlines }}</p>
 </header>
 
-<h2 class="index-heading">posts</h2>
+<h2 class="index-heading visually-hidden">posts</h2>
 
 <ul class="post-list">
   {% for post in site.posts %}
