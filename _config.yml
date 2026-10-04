@@ -23,8 +23,6 @@ url: "https://spzsource.github.io" # the base hostname & protocol for your site,
 github_username:  spzSource
 linkedin_username: popiticha
 
-header_pages:
-  - about.md
 
 google_analytics: UA-118456916-1
 
