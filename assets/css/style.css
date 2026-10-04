@@ -70,12 +70,12 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--mono); }
   font-family: var(--mono);
 }
 
-.site-header { padding: 2.5rem 0 0; }
+.site-header { padding: 1.5rem 0 0; }
 
 .top-nav {
   display: flex; justify-content: space-between; align-items: baseline;
   flex-wrap: wrap; gap: 0.5rem 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid var(--rule);
   font-size: 0.8125rem;
 }
@@ -131,7 +131,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--mono); }
   border: 0;
 }
 
-.post-list { list-style: none; padding: 0; margin-top: 2.5rem; }
+.post-list { list-style: none; padding: 0; margin-top: 1.5rem; }
 
 .post-list li {
   padding: 1.25rem 0;
@@ -161,7 +161,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--mono); }
 
 /* ---------- post ---------- */
 
-.post-header { padding: 4rem 0 2rem; }
+.post-header { padding: 2.5rem 0 2rem; }
 
 .post-header h1 {
   font-size: 1.625rem;
@@ -305,7 +305,7 @@ code, pre, kbd { font-family: var(--mono); }
 
 @media (max-width: 40rem) {
   body { font-size: 0.875rem; }
-  .post-header { padding-top: 3rem; }
+  .post-header { padding-top: 2rem; }
 }
 
 /* ============================================================
