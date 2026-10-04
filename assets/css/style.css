@@ -216,6 +216,8 @@ code, pre, kbd { font-family: var(--mono); }
   padding: 0.9rem 1.1rem;
   border-left-width: 4px;
   color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.9rem;
 }
 .prose blockquote.note p, .prose blockquote.warning p { margin: 0.4em 0; }
 
