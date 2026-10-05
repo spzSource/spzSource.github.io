@@ -2,6 +2,7 @@
 layout: post
 title: "Composition and separation of concerns"
 date: 2018-10-18 21:30:00 +0300
+last_modified_at: 2018-10-20
 categories: design
 tags: code quality, composition, decorator, functional composition, golang, go, design patterns, cross cutting concerns, clean code, unit testing
 ---
@@ -79,7 +80,7 @@ Logging, authorization, load balancing, retries, caching are nothing more than [
 
 This is where composition (functional and object oriented) comes into place. Instead of placing all stuff into a single class or function we can decouple logic into a small composable pieces.
 
-![Composition]({{ "/assets/composition/onion.png" | absolute_url }}){:style="display: block;margin: 0 auto;" }
+![Composition]({{ "/assets/composition/onion.png" | relative_url }}){:style="display: block;margin: 0 auto;" loading="lazy" decoding="async" width="281" height="231" }
 
 Looks like an onion, right? :)
 

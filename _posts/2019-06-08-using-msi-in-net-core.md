@@ -2,6 +2,7 @@
 layout: post
 title: "Azure managed identities: specificities for local development under .Net Core"
 date: 2019-06-08 22:55:00 +0300
+last_modified_at: 2019-06-09
 categories: azure
 tags: netcore, netcoreapp, dotnet, .net, msi, azure, managed, service, identities, resources.
 ---

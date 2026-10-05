@@ -2,6 +2,7 @@
 layout: post
 title:  "Setup code coverage for VSTS and .NET Core."
 date:   2018-04-22 22:48:00 +0300
+last_modified_at: 2018-04-30
 categories: VSTS
 tags: VSTS, dotnet, code coverage
 ---
@@ -26,7 +27,7 @@ Both of this commands correctly works only on Windows and require _Visual Studio
 
 So, let's consider code coverage through `vstest.console.exe` tool in scope of VSTS test task.
 
-![VSTS test task]({{ "/assets/vsts_test_task.png" | absolute_url }})
+![VSTS test task]({{ "/assets/vsts_test_task.png" | relative_url }}){: loading="lazy" decoding="async" width="646" height="185"}
 
 Here is a basic configuration for _Visual Studio Test_ task:
 
@@ -38,7 +39,7 @@ Here is a basic configuration for _Visual Studio Test_ task:
 | Settings file         | tests.runsettings.xml             |
 | Code coverage enabled | true                              |
 
-![VSTS test task]({{ "/assets/vsts_test_task_configuration.png" | absolute_url }})
+![VSTS test task]({{ "/assets/vsts_test_task_configuration.png" | relative_url }}){: loading="lazy" decoding="async" width="1056" height="803"}
 
 **Important:** It is important to specify the scope for code coverage, because by default the tool calculates coverage result across all existing assemblies in the output directory. As a result coverage result might be less that it is.
 
@@ -83,4 +84,4 @@ For further details you can go through documentation [here](https://msdn.microso
 
 That's it. Now it is possible to gather coverage statistics during tests execution. The result should looks like below:
 
-![VSTS test task]({{ "/assets/vsts_test_task_coverage_result.png" | absolute_url }})
+![VSTS test task]({{ "/assets/vsts_test_task_coverage_result.png" | relative_url }}){: loading="lazy" decoding="async" width="384" height="172"}

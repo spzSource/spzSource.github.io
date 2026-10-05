@@ -2,6 +2,7 @@
 layout: post
 title:  "Building modular applications"
 date:   2018-09-15 04:57:00 +0300
+last_modified_at: 2018-09-29
 categories: architecture
 tags: dotnet architecture patterns IoC module modular applications
 ---
@@ -51,7 +52,7 @@ In case none modular structure it hard to change something independently, becaus
 
 ## Modular programming
 
-![Modular application diagram]({{ "/assets/modular_applications/Modular_App.png" | absolute_url }})
+![Modular application diagram]({{ "/assets/modular_applications/Modular_App.png" | relative_url }}){: loading="lazy" decoding="async" width="731" height="491"}
 
 
 ### When modular design gives benefits
@@ -65,7 +66,7 @@ In case none modular structure it hard to change something independently, becaus
 
 Here is how basic modular program can be implemented:
 
-![Modular application structure]({{ "/assets/modular_applications/Modular_App_Structure.png" | absolute_url }})
+![Modular application structure]({{ "/assets/modular_applications/Modular_App_Structure.png" | relative_url }}){: loading="lazy" decoding="async" width="468" height="844"}
 
 Each module have extension method for `IServiceCollection` contract to be able for append module implementations into IoC container.
 

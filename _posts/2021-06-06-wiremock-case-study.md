@@ -47,7 +47,7 @@ The table may give understanding of how fast regression testing activities becam
 
 The diagramm (CFD diagramm) below visually shows reduction of QA efforts when testing new functionality for any service.
 
-![CFD]({{ "assets/wiremock-case-study/CFD-diagram.png" | absolute_url }}){:style="display: block;margin: 0 auto;" }
+![CFD]({{ "assets/wiremock-case-study/CFD-diagram.png" | relative_url }}){:style="display: block;margin: 0 auto;" loading="lazy" decoding="async" width="1832" height="810" }
 
 Legend:
 - (1) - before applying WireMock
