@@ -37,6 +37,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jemoji
+  - jekyll-redirect-from
 
 # Default social share image (jekyll-seo-tag og:image / twitter card).
 # Override per post with `image: /path/to.png` in front matter.
