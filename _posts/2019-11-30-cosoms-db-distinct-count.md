@@ -2,6 +2,7 @@
 layout: post
 title: "Cosmos DB: does DISTINCT COUNT really work?"
 date: 2019-11-30 22:55:00 +0300
+last_modified_at: 2019-12-01
 categories: azure
 tags: cosmosdb, azure, distinct, count, query.
 ---

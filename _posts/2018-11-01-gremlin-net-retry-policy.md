@@ -2,6 +2,7 @@
 layout: post
 title: "Implementing retry policies for Gremlin.NET"
 date: 2018-11-01 19:30:00 +0300
+last_modified_at: 2018-12-01
 categories: programming
 tags: gremlin.net, retry, policies, graph, cosmosdb, azure
 ---
@@ -16,7 +17,7 @@ A bad news are that up to `v3.4.0-rc2` client does not provide any intormation a
 
 Here is what `ResponseExceptions` contains starting at `v3.4.0-rc2` version:
 
-![Learning Path]({{ "/assets/gremlin-retry/ResponseExceptionContent.PNG" | absolute_url }})
+![Learning Path]({{ "/assets/gremlin-retry/ResponseExceptionContent.PNG" | relative_url }}){: loading="lazy" decoding="async" width="1055" height="513"}
 
 Let's write some code for both cases (exponential retry and `retry-after` header)
 

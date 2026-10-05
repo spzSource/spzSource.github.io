@@ -2,6 +2,7 @@
 layout: post
 title: "Nuke.Build + Azure Pipelines: how to publish code coverage artifacts correctly"
 date: 2020-05-08 22:56:00 +0300
+last_modified_at: 2020-05-09
 categories: azure
 tags: azure, pipelines, devops, nuke, build, coverage, publication, artifacts
 ---
