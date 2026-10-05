@@ -82,6 +82,17 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--mono); }
 
 .brand { text-decoration: none; }
 
+/* vim-style typing animation for the brand title */
+.brand .ch { visibility: hidden; }
+.brand .ch.typed { visibility: visible; }
+.brand .ch.cursor {
+  visibility: visible;
+  background: var(--ink);
+  color: var(--bg);
+}
+.brand .cursor-blink { animation: brand-blink 1.06s steps(1) infinite; }
+@keyframes brand-blink { 0%, 60% { opacity: 1; } 61%, 100% { opacity: 0; } }
+
 .nav-links a {
   color: var(--ink-soft);
   text-decoration: none;

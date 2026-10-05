@@ -18,6 +18,42 @@
   <header class="site-header">
     <nav class="top-nav wrap" aria-label="Primary">
       <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <script>
+        (function () {
+          var brand = document.currentScript.previousElementSibling;
+          var text = brand.textContent;
+          brand.textContent = '';
+          brand.setAttribute('aria-label', text);
+          var spans = [];
+          for (var i = 0; i < text.length; i++) {
+            var s = document.createElement('span');
+            s.className = 'ch';
+            s.textContent = text[i] === ' ' ? '\u00A0' : text[i];
+            s.setAttribute('aria-hidden', 'true');
+            brand.appendChild(s);
+            spans.push(s);
+          }
+          var i = 0;
+          function step() {
+            if (i > 0) {
+              spans[i - 1].classList.remove('cursor');
+              spans[i - 1].classList.add('typed');
+            }
+            if (i < spans.length) {
+              spans[i].classList.add('cursor');
+              i++;
+              setTimeout(step, 90 + Math.random() * 140);
+            } else {
+              var caret = document.createElement('span');
+              caret.className = 'ch cursor cursor-blink';
+              caret.textContent = '\u00A0';
+              caret.setAttribute('aria-hidden', 'true');
+              brand.appendChild(caret);
+            }
+          }
+          setTimeout(step, 400);
+        })();
+      </script>
       <span class="nav-links">
         <a href="{{ '/' | relative_url }}">posts</a>
         <a href="{{ '/feed.xml' | relative_url }}">rss</a>
