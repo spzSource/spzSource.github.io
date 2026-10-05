@@ -16,7 +16,12 @@ layout: default
   </div>
 
   <footer class="post-footer">
-    <a href="{{ '/' | relative_url }}">← all posts</a>
+    <a href="{{ '/' | relative_url }}">← all posts</a> ·
+    {% if site.github.repository_url %}
+    <a href="{{ site.github.repository_url }}/edit/master/{{ page.path }}">edit this page</a>
+    {% else %}
+    <a href="https://github.com/{{ site.github_username }}/spzSource.github.io/edit/master/{{ page.path }}">edit this page</a>
+    {% endif %}
   </footer>
 </article>
 
