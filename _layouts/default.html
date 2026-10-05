@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+  <link rel="preload" href="{{ '/assets/fonts/source-serif-4/source-serif-4-latin-400.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ '/assets/fonts/DepartureMono-Regular.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="{{ '/assets/fonts/source-serif-4-v15-latin-regular.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <style>{% include source-serif-4.css %}{% include style.css %}</style>
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/logo.svg' | relative_url }}">
   {% seo title=false %}
   {% feed_meta %}
@@ -21,7 +21,9 @@
           var brand = document.currentScript.previousElementSibling;
           var text = brand.textContent;
           brand.textContent = '';
-          brand.setAttribute('aria-label', text);
+          // aria-label must match the visible text, which uses non-breaking
+          // spaces, otherwise Lighthouse flags a label-content-name-mismatch
+          brand.setAttribute('aria-label', text.replace(/ /g, '\u00A0'));
           var spans = [];
           for (var i = 0; i < text.length; i++) {
             var s = document.createElement('span');
@@ -43,8 +45,7 @@
               setTimeout(step, 90 + Math.random() * 140);
             } else {
               var caret = document.createElement('span');
-              caret.className = 'ch cursor cursor-blink';
-              caret.textContent = '\u00A0';
+              caret.className = 'ch cursor cursor-blink caret';
               caret.setAttribute('aria-hidden', 'true');
               brand.appendChild(caret);
             }
