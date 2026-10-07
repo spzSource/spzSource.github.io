@@ -26,6 +26,8 @@
   --code-bg:   rgba(46, 44, 40, 0.06);
   --pre-bg:    #17202f;
   --pre-ink:   rgba(238, 240, 245, 0.92);
+  --snail-fill: rgba(46, 44, 40, 0.9);
+  --snail-detail: #f6f4ee;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -39,6 +41,8 @@
     --code-bg:   rgba(232, 236, 244, 0.08);
     --pre-bg:    #17202f;
     --pre-ink:   rgba(232, 236, 244, 0.9);
+    --snail-fill: rgba(232, 236, 244, 0.94);
+    --snail-detail: #0e1626;
   }
 }
 
@@ -304,6 +308,58 @@ code, pre, kbd { font-family: var(--mono); }
   color: var(--ink-faint);
 }
 .site-footer a { color: var(--ink-soft); }
+
+/* ---------- pixel snail ---------- */
+
+.site-footer { position: relative; overflow: hidden; }
+
+.snail {
+  position: absolute;
+  left: 0;
+  bottom: 0.3rem;
+  width: 2.8125rem;  /* 30 px-units at 1.5px each */
+  height: 1.21875rem; /* 13 px-units at 1.5px each */
+  background-color: var(--ink-faint);
+  -webkit-mask: url("/assets/snail-outline.svg") no-repeat center / 100% 100%;
+          mask: url("/assets/snail-outline.svg") no-repeat center / 100% 100%;
+  animation: snail-crawl 16s linear infinite;
+}
+
+/* Three-layer pixel sprite: dark outline, light fill, dark details.
+   Each layer is an SVG mask tinted with a theme color, so the snail
+   adapts to light/dark mode. Mask uses alpha, so the SVG rects
+   (opaque black) are the pixels. */
+.snail::before,
+.snail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  animation: snail-bob 0.35s steps(1) infinite;
+}
+.snail::before {
+  background-color: var(--snail-fill);
+  -webkit-mask: url("/assets/snail-fill.svg") no-repeat center / 100% 100%;
+          mask: url("/assets/snail-fill.svg") no-repeat center / 100% 100%;
+}
+.snail::after {
+  background-color: var(--snail-detail);
+  -webkit-mask: url("/assets/snail-detail.svg") no-repeat center / 100% 100%;
+          mask: url("/assets/snail-detail.svg") no-repeat center / 100% 100%;
+}
+
+@keyframes snail-crawl {
+  from { transform: translateX(-3rem); }
+  to   { transform: translateX(calc(44rem + 3rem)); }
+}
+
+@keyframes snail-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-1px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .snail { display: none; }
+}
 
 @media (max-width: 40rem) {
   body { font-size: 0.875rem; }

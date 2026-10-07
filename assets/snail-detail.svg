@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="13" viewBox="0 0 30 13">
+  <!-- dark details: shell spiral, pupils, head eye, smile -->
+  <!-- spiral: ring open at bottom-right, inner dot -->
+  <rect x="8"  y="4" width="5" height="1"/>
+  <rect x="8"  y="5" width="1" height="3"/>
+  <rect x="12" y="5" width="1" height="2"/>
+  <rect x="8"  y="7" width="4" height="1"/>
+  <rect x="10" y="6" width="1" height="1"/>
+  <!-- pupils -->
+  <rect x="21" y="0" width="2" height="1"/>
+  <rect x="27" y="0" width="2" height="1"/>
+  <!-- head eye + smile -->
+  <rect x="24" y="6" width="1" height="1"/>
+  <rect x="24" y="7" width="2" height="1"/>
+</svg>
