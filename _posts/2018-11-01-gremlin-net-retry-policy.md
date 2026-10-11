@@ -4,7 +4,7 @@ title: "Implementing retry policies for Gremlin.NET"
 date: 2018-11-01 19:30:00 +0300
 last_modified_at: 2018-12-01
 categories: programming
-tags: gremlin.net, retry, policies, graph, cosmosdb, azure
+tags: [gremlin.net, retry, policies, graph, cosmosdb, azure]
 ---
 
 At the time of writing this article, [Gremlin.NET](https://github.com/apache/tinkerpop/tree/master/gremlin-dotnet) client library does not support retrying after transient faults. This is a big issue when client communicate with graph services which have to provide  some kind of SLA agrrements.

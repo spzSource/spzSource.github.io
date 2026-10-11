@@ -4,7 +4,7 @@ title: "Zero-downtime deployment for Azure functions - 'how to' guide."
 date: 2021-07-27 19:50:00 +0300
 last_modified_at: 2023-04-30
 categories: devops
-tags: devops, deployment, continuous, CD, azure, functions, slots, guide
+tags: [devops, deployment, continuous, cd, azure, functions, slots, guide]
 ---
 
 I found it useful to highlight the approach of zero-downtime deployment in context of Azure Functions as well as a few "pain points", because the standard documentation does not explain all nuances (there are a lot of nuances by the way).

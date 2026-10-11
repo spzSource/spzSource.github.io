@@ -15,6 +15,38 @@ layout: default
     {{ content }}
   </div>
 
+  {% if page.tags.size > 0 %}
+  {% assign related = "" | split: "" %}
+  {% assign page_tags = page.tags | join: "\u0001" | downcase | split: "\u0001" %}
+  {% comment %}Rank by number of shared tags (highest first), newest first within a rank.{% endcomment %}
+  {% for score in (1..page_tags.size) reversed %}
+    {% for post in site.posts %}
+      {% if post.url == page.url %}{% continue %}{% endif %}
+      {% assign shared = 0 %}
+      {% assign post_tags = post.tags | join: "\u0001" | downcase | split: "\u0001" %}
+      {% for tag in page_tags %}
+        {% if post_tags contains tag %}{% assign shared = shared | plus: 1 %}{% endif %}
+      {% endfor %}
+      {% if shared == score %}{% assign related = related | push: post %}{% endif %}
+      {% if related.size >= 5 %}{% break %}{% endif %}
+    {% endfor %}
+    {% if related.size >= 5 %}{% break %}{% endif %}
+  {% endfor %}
+  {% if related.size > 0 %}
+  <aside class="related-posts">
+    <h2>Related posts</h2>
+    <ul>
+      {% for post in related limit:5 %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </aside>
+  {% endif %}
+  {% endif %}
+
   <footer class="post-footer">
     <a href="{{ '/' | relative_url }}">← all posts</a> ·
     {% if site.github.repository_url %}

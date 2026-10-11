@@ -3,7 +3,7 @@ layout: post
 title:  "Cosmos DB: Configure indexing to perform range queries for string values."
 date:   2018-04-30 22:10:00 +0300
 categories: Azure
-tags: Azure, CosmosDB, Indexing
+tags: [azure, cosmosdb, indexing]
 ---
 
 By default, the `CosmosDB SDK` serializes `DateTime` values as `ISO 8601` string. 
