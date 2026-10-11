@@ -13,12 +13,14 @@
   {% feed_meta %}
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <nav class="top-nav wrap" aria-label="Primary">
       <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
       <script>
         (function () {
           var brand = document.currentScript.previousElementSibling;
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
           var text = brand.textContent;
           brand.textContent = '';
           // aria-label must match the visible text, which uses non-breaking
@@ -62,7 +64,7 @@
     </nav>
   </header>
 
-  <main class="wrap">
+  <main class="wrap" id="main" tabindex="-1">
     {{ content }}
   </main>
 
