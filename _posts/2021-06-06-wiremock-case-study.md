@@ -3,7 +3,7 @@ layout: post
 title: "WireMock case study: how to reduce delivery lead time"
 date: 2021-06-06 22:39:00 +0300
 categories: qa
-tags: qa, acceptance testing, test automation, wiremock
+tags: [qa, "acceptance testing", "test automation", wiremock]
 ---
 During the last half of the year, my team have done a lot in the context of automated acceptance testing for our services. The text below is an attempt to formalize what was done and what we've achieved as a team.
 

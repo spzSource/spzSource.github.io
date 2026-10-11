@@ -4,7 +4,7 @@ title: "Composition and separation of concerns"
 date: 2018-10-18 21:30:00 +0300
 last_modified_at: 2018-10-20
 categories: design
-tags: code quality, composition, decorator, functional composition, golang, go, design patterns, cross cutting concerns, clean code, unit testing
+tags: ["code quality", composition, decorator, "functional composition", golang, go, "design patterns", "cross cutting concerns", "clean code", "unit testing"]
 ---
 
 Lets talk a bit about SOLID or rather SRP (Single responsibility principle). How do you think does this piece of code follow SRP principle?

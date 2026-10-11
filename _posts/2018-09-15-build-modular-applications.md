@@ -4,7 +4,7 @@ title:  "Building modular applications"
 date:   2018-09-15 04:57:00 +0300
 last_modified_at: 2018-09-29
 categories: architecture
-tags: dotnet architecture patterns IoC module modular applications
+tags: [dotnet, architecture, patterns, ioc, module, "modular applications"]
 ---
 
 Have you ever seen projects where all entities, models, domain objects, repositories, services are placed in one place based on class types: all entities are on a single project, repositories are all in a another project and so on? Does it pretty familiar for you? ;) I would say this is worst approach that I can imagine. Why it is bad? Well, there are many reasons...

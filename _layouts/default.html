@@ -10,6 +10,11 @@
   <style>{% include source-serif-4.css %}{% include style.css %}</style>
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/logo.svg' | relative_url }}">
   {% seo title=false %}
+  {% if page.tags %}
+  <meta name="keywords" content="{{ page.tags | join: ', ' }}" />
+  {% for tag in page.tags %}<meta property="article:tag" content="{{ tag }}" />
+  {% endfor %}
+  {% endif %}
   {% feed_meta %}
 </head>
 <body>

@@ -4,7 +4,7 @@ title: "Azure Durable Functions: performance tips"
 date: 2020-03-07 18:50:00 +0300
 last_modified_at: 2020-03-21
 categories: azure
-tags: functions, azure, durable framework, performance, throughput
+tags: [functions, azure, "durable framework", performance, throughput]
 ---
 
 I've been using Azure Durable Function for a long time for developing a high load ETL process. And I have to mention that it's very useful library that allows you write stateful functions in a serverless compute environment. Also it not worse to mention that programming model allows you to write code in a same way you write asynchronous code using `async` and `await` keywords. At a first look it might seem that there is no difference between regular async calls and durable calls, but it's not true.

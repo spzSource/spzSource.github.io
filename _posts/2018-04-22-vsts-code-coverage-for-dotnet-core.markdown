@@ -4,7 +4,7 @@ title:  "Setup code coverage for VSTS and .NET Core."
 date:   2018-04-22 22:48:00 +0300
 last_modified_at: 2018-04-30
 categories: VSTS
-tags: VSTS, dotnet, code coverage
+tags: [vsts, dotnet, "code coverage"]
 ---
 
 Let's imagine that you have VSTS build pipeline for continuously build and test you project. 
